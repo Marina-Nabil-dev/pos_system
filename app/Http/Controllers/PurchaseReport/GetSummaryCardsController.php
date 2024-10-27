@@ -15,9 +15,7 @@ class GetSummaryCardsController extends Controller
         $totalPurchaseReturns = Purchase::where('type', 'purchase_return')->sum('amount');
         $currentStock = Product::sum('stock_quantity');
 
-        return view('purchase-report.summary',
-            compact([
-                'totalPurchases', 'totalPurchaseReturns', 'currentStock',
-            ]));
+        return view('purchase-report.summary', compact([
+            'totalPurchases', 'totalPurchaseReturns', 'currentStock']));
     }
 }
