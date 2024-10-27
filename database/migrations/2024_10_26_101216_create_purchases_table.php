@@ -12,7 +12,7 @@ return new class extends Migration {
             $table->id();
             $table->decimal('amount', 10, 2);
             $table->integer('quantity');
-            $table->enum('type', PurchaseTypeEnum::values());
+            $table->string('type', PurchaseTypeEnum::values());
             $table->timestamps();
             $table->softDeletes();
         });

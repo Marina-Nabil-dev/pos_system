@@ -28,4 +28,9 @@ trait EnumHelper
     {
         return Str::of($this->value)->replace('-', ' ')->replace('_', ' ')->title()->value();
     }
+
+    public function key()
+    {
+        return Str::of($this->name)->replace('-', '_')->lower()->replace('vehicle_', '')->value();
+    }
 }

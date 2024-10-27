@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-use App\Traits\EnumHelper;
+use App\traits\EnumHelper;
 
 enum PurchaseTypeEnum : string
 {

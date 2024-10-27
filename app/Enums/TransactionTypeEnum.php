@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-use App\traits\EnumHelper;
+use App\Traits\EnumHelper;
 
 enum TransactionTypeEnum : string
 {

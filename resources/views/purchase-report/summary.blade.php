@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('content')
+@section('styles')
     <style>
         .card {
             border: none;
@@ -35,6 +35,9 @@
             background-color: #eafaf1;
         }
     </style>
+@endsection
+
+@section('content')
     <div class="container mt-3">
         <div class="row">
             <!-- Summary Cards -->
@@ -95,7 +98,6 @@
             </div>
 
 
-
             <table id="purchaseTable" class="table table-striped">
                 <thead>
                 <tr>
@@ -142,7 +144,7 @@
             });
             $(document).ready(function () {
                 $.ajax({
-                    url: '{{ route('trends.data') }}',
+                    url: '{{ route('purchase.trends') }}',
                     method: 'GET',
                     success: function (response) {
                         const ctx = document.getElementById('purchaseTrendsChart').getContext('2d');

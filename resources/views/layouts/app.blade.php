@@ -35,7 +35,6 @@
 <script src="{{ asset('vendor/libs/datatables/datatables-bootstrap5.js') }}"></script>
 <script src="{{ asset('vendor/libs/datatables/dataTables.min.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
 

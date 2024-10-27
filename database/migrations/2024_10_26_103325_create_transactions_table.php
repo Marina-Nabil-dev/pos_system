@@ -13,7 +13,7 @@ return new class extends Migration {
             $table->foreignId('purchase_id');
             $table->decimal('amount');
             $table->integer('quantity');
-            $table->enum('type', TransactionTypeEnum::values());
+            $table->string('type', TransactionTypeEnum::values());
             $table->timestamps();
             $table->softDeletes();
         });
