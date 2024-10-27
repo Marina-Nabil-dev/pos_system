@@ -19,7 +19,7 @@ class GetPurchaseTrendsDataController extends Controller
 
         return response()->json([
             'labels' => $labels,
-            'data' => $data
+            'data' => $data,
         ]);
     }
 }

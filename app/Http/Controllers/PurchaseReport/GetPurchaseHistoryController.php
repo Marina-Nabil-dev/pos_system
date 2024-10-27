@@ -13,9 +13,9 @@ class GetPurchaseHistoryController extends Controller
     {
         if ($request->ajax()) {
             $data = PurchaseProductPivot::whereHas('purchase')
-                ->with('product','purchase','purchase.transaction')
+                ->with('product', 'purchase', 'purchase.transaction')
                 ->when($request->has('type') && $request->type !== null, function ($query) use ($request) {
-                    $query->whereHas('purchase.transaction', fn($query) => $query->where('type', $request->type));
+                    $query->whereHas('purchase.transaction', fn ($query) => $query->where('type', $request->type));
                 })
                 ->get()
                 ->map(function ($purchaseProduct) {
@@ -23,8 +23,8 @@ class GetPurchaseHistoryController extends Controller
                     return [
                         'product_name' => $purchaseProduct->product->name,
                         'transaction_type' => $purchaseProduct->purchase->transaction->type->prettifyName(),
-                        'quantity' => $purchaseProduct->purchase->quantity,
-                        'amount' => $purchaseProduct->purchase->amount,
+                        'quantity' => $purchaseProduct->quantity,
+                        'amount' => $purchaseProduct->price,
                         'created_at' => $purchaseProduct->purchase->created_at->format('d M, Y h:i A'),
                     ];
                 });

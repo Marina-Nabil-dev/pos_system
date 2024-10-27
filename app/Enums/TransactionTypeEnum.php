@@ -4,14 +4,14 @@ namespace App\Enums;
 
 use App\Traits\EnumHelper;
 
-enum TransactionTypeEnum : string
+enum TransactionTypeEnum: string
 {
- use EnumHelper;
+    use EnumHelper;
 
-Case OPEN_STOCK = 'open_stock';
-Case PURCHASE = 'purchase';
-Case SELL = 'sell';
-Case SELL_RETURN = 'sell_return';
-Case PURCHASE_RETURN = 'purchase_return';
-Case ADJUSTMENT = 'adjustment';
+    case OPEN_STOCK = 'open_stock';
+    case PURCHASE = 'purchase';
+    case SELL = 'sell';
+    case SELL_RETURN = 'sell_return';
+    case PURCHASE_RETURN = 'purchase_return';
+    case ADJUSTMENT = 'adjustment';
 }

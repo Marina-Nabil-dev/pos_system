@@ -9,18 +9,19 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Purchase extends Model
 {
-    use SoftDeletes, HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $guarded = ['id'];
 
     protected $casts = [
-        'type' => PurchaseTypeEnum::class
+        'type' => PurchaseTypeEnum::class,
     ];
 
     public function products()
     {
-        return $this->belongsToMany(Product::class, 'purchase_products', 'purchase_id','product_id');
+        return $this->belongsToMany(Product::class, 'purchase_products', 'purchase_id', 'product_id');
     }
+
     public function transaction()
     {
         return $this->hasOne(Transaction::class);

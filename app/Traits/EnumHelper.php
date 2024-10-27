@@ -16,6 +16,7 @@ trait EnumHelper
             self::cases()
         );
     }
+
     public static function values()
     {
         return array_map(

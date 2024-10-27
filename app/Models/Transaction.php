@@ -9,12 +9,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Transaction extends Model
 {
-    use SoftDeletes, HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $guarded = ['id'];
 
     protected $casts = [
-        'type' => TransactionTypeEnum::class
+        'type' => TransactionTypeEnum::class,
     ];
 
     public function purchase()

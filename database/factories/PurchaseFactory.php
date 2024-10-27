@@ -17,7 +17,7 @@ class PurchaseFactory extends Factory
     {
         return $this->afterCreating(function (Purchase $purchase) {
 
-            for($i = 0; $i < 5; $i++) {
+            for ($i = 0; $i < 5; $i++) {
                 $purchase->products()->attach(
                     $this->faker->randomElement(Product::pluck('id')->toArray()),
                     [
@@ -28,7 +28,7 @@ class PurchaseFactory extends Factory
             }
 
             Transaction::factory()->create([
-                'purchase_id' => $purchase->id
+                'purchase_id' => $purchase->id,
             ]);
         });
     }
@@ -39,7 +39,7 @@ class PurchaseFactory extends Factory
             'quantity' => $this->faker->numberBetween(1, 100),
             'amount' => $this->faker->randomFloat(2, 10, 1000),
             'type' => $this->faker->randomElement(PurchaseTypeEnum::values()),
-            'created_at' => $this->faker->dateTimeBetween('-5 months','2 months'),
+            'created_at' => $this->faker->dateTimeBetween('-5 months', '2 months'),
             'updated_at' => Carbon::now(),
         ];
     }

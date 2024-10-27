@@ -89,7 +89,7 @@
                 <div class="col-md-4">
                     <select id="typeFilter" class="form-select">
                         <option value="">All Status</option>
-                        @foreach(\App\Enums\TransactionTypeEnum::cases() as $status)
+                        @foreach (\App\Enums\TransactionTypeEnum::cases() as $status)
                             <option value="{{ $status->value }}">{{ $status->prettifyName() }}</option>
 
                         @endforeach

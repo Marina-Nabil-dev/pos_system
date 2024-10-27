@@ -9,12 +9,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix('purchase-report')->group(function ()
-{
+Route::prefix('purchase-report')->group(function () {
     Route::get('/', GetSummaryCardsController::class);
 
-    Route::get('/trends-data', GetPurchaseTrendsDataController::class)->name('purchase.trends');
+    Route::get('trends-data', GetPurchaseTrendsDataController::class)->name('purchase.trends');
 
-    Route::get('/purchase-history', GetPurchaseHistoryController::class)->name('purchase.history');
+    Route::get('purchase-history', GetPurchaseHistoryController::class)->name('purchase.history');
 
 });

@@ -16,7 +16,7 @@ class ProductFactory extends Factory
             'name' => $this->faker->name(),
             'price' => $this->faker->randomFloat(2, 1, 1000),
             'stock_quantity' => $this->faker->numberBetween(1, 100),
-            'created_at' => $this->faker->dateTimeBetween('-5 months','2 months'),
+            'created_at' => $this->faker->dateTimeBetween('-5 months', '2 months'),
             'updated_at' => Carbon::now(),
         ];
     }

@@ -19,8 +19,8 @@ class TransactionFactory extends Factory
             'amount' => $this->faker->randomFloat(2, 10, 1000),
             'quantity' => $this->faker->numberBetween(1, 100),
             'type' => $this->faker->randomElement(TransactionTypeEnum::values()),
-            'created_at' => $this->faker->dateTimeBetween('-5 months','2 months'),
-            'updated_at' => Carbon::now()
+            'created_at' => $this->faker->dateTimeBetween('-5 months', '2 months'),
+            'updated_at' => Carbon::now(),
         ];
     }
 }
